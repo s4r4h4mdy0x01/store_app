@@ -4,7 +4,7 @@ import 'package:stroe_app/models/product_model.dart';
 class AddProduct {
   Future<ProductsModel> addProduct(
       {required String title,
-      required String price,
+      required  dynamic price,
       required String descr,
       required String image,
       required String category}) async {

@@ -1,15 +1,18 @@
 import 'package:stroe_app/helper/json_helper.dart';
 import 'package:stroe_app/models/product_model.dart';
 
-class UpdateProduct {
+class UpdateProductServices {
   Future<ProductsModel> updateProduct(
       {required String title,
-      required String price,
+      required  dynamic price,
       required String descr,
       required String image,
-      required String category}) async {
-    Map<String, dynamic> data = await Api().post(
-      uri: 'https://fakestoreapi.com/products',
+      required String category,
+      required  dynamic id,
+      
+      }) async {
+    Map<String, dynamic> data = await Api().put(
+      uri: 'https://fakestoreapi.com/products/$id',
       body: {
         "title": title,
         "price": price,

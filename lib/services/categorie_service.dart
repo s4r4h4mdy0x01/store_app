@@ -9,5 +9,5 @@ class CategorieServices {
         await Api().get(url: 'https://fakestoreapi.com/products/categories');
 
     return dataCategories;
-  }
+  } 
 }

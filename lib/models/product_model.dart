@@ -1,11 +1,12 @@
 class ProductsModel {
   final int id;
   final String title;
-  final double price;
+  final  dynamic price;
   final String description;
   final String category;
   final String image;
   final RatingModel rating;
+ 
   ProductsModel(
       {required this.rating,
       required this.title,
@@ -17,17 +18,17 @@ class ProductsModel {
   factory ProductsModel.fromJson(jsonData) {
     return ProductsModel(
         title: jsonData['title'],
-        price: jsonData['price'],
+        price: jsonData['price'] ,
         description: jsonData['description'],
         category: jsonData['category'],
         image: jsonData['image'],
         id: jsonData['id'],
-        rating: jsonData['rating']);
-  }
+        rating: RatingModel.fromJson(jsonData['rating']));
+  } //rating
 }
 
 class RatingModel {
-  final double rate;
+  final num rate;
   final int count;
 
   RatingModel({required this.rate, required this.count});
